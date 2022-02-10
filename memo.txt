@@ -1,0 +1,91 @@
+cd WORKSPACE
+git clone git@github.com:abcdevelop/simple-breath.git
+
+git remote -v
+git add.
+git commit -m "First commit"
+git push
+
+
+
+vue create simple-breath
+cd simple-breath
+vue add vuetify
+
+https://github.com/apexcharts/vue-apexcharts
+npm install --save apexcharts
+npm install --save vue-apexcharts
+
+npm install --save @mdi/font
+
+
+
+--------------
+// Firebase
+--------------
+
+https://www.youtube.com/watch?v=a-0W40NM0dI
+https://medium.com/@rachidsakara/how-to-deploy-vue-js-applications-with-firebase-hosting-40cfa7f724e4
+https://garywoodfine.com/deploy-vue-js-application-to-firebase/
+npm install -g firebase-tools
+
+npm run build
+
+firebase login --reauth
+firebase projects:list
+firebase init
+
+git add .
+git commit -m "bla bla"
+git branch
+git push
+
+npm run build
+firebase serve
+firebase deploy
+
+
+
+
+
+https://cli.vuejs.org/core-plugins/pwa.html#configuration
+vue add pwa
+
+https://www.360learntocode.com/2020/12/how-to-change-app-name-icon-color-display-of-vuejs-pwa.html
+
+npm install --save vuex-persistedstate
+
+https://sortablejs.github.io/Vue.Draggable/#/simple
+npm install --save @/vuedraggable
+
+
+
+
+
+
+
+
+
+
+
+
+https://github.com/eCollect/vue-swipe-actions
+npm install --save vue-swipe-actions
+
+
+
+-----------
+// DOCKER
+-----------
+
+docker build -t abcdevelop/respire-simple:1.2.1 .
+docker images | grep abcdevelop
+docker run --name respire-simple_1.2.1 -d -p 8071:80 abcdevelop/respire-simple:1.2.1
+docker ps
+
+ou
+
+Modifier le numéro de version dans docker-compose puis :
+docker-compose build
+docker-compose up -d
+
