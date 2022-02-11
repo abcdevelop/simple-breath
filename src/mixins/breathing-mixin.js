@@ -1,13 +1,7 @@
 import { mapGetters, mapActions } from "vuex";
 import { BREATHING } from "@/shared/constants";
-// import {Breath} from '@/shared/entities'
-// import {Cycle} from '@/shared/entities'
 
 export const breathingMixin = {
-  // data: () => ({
-  //   defaultBreath:new Breath(),
-  //   defaultCycle:new Cycle(),
-  // }),
   computed: {
     ...mapGetters({
       getCurrentBreath: BREATHING.getCurrentBreath,
@@ -37,9 +31,6 @@ export const breathingMixin = {
       setBeepPlay: BREATHING.setBeepPlay,
       
       setBreath: BREATHING.setBreath,
-      // moveUpBreath: BREATHING.moveUpBreath,
-      // moveDownBreath: BREATHING.moveDownBreath,
-      // moveFromToBreath: BREATHING.moveFromToBreath,
       moveBreath: BREATHING.moveBreath,
       moveCycle: BREATHING.moveCycle,
       setCycle: BREATHING.setCycle,

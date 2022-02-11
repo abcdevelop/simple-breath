@@ -1,0 +1,39 @@
+           en: `Here is an APP to breath with chosen timings cycles. It's very simple !!! 
+            So, you will increase your breathing capacity. 
+            You should try it, it's free !!!...§§§... 
+            Hers is the web address : 
+            https://simple-breath.web.app`,
+
+            fr: `Voici une APP pour respirer selon des tepms de cycles choisis. C'est tres simple !!! 
+            Tu pourras ainsi augmenter ta capacité respiratoire.
+            Tu devrais l'essayer, c'est gratuit !!!...§§§... 
+            Voici l'adresse Web : 
+            https://simple-breath.web.app`
+
+
+
+            en: `With "Simple Breath", increase your breathing capacity.
+            Easily manage the timings of cycles for your breathings.
+            Good practice !!!`,
+
+            fr: `Avec "Respire Simple", augmente ta capacité respiratoire.
+            Règle facilement les temps de cycles pour tes respirations.
+            Bonne pratique !!!`
+
+
+
+            en: `The use of this application is the sole responsibility of the person who uses it.`,
+
+            fr: `L'utilisation de cette application est de la responsabilité exclusive de la personne qui le fait.`
+ 
+ 
+ 
+ Simple Breath
+ 
+ 
+ Breathe and increase your breathing capacity
+ 
+ 
+ Here is an APP to breathe with chosen timings cycles. It's very simple !!! 
+By doing so, you will increase your breathing capacity, and you will feel better.
+You should try it, it is free !!!

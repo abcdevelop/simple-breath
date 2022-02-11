@@ -2,9 +2,6 @@ import { mapGetters, mapActions } from "vuex";
 import { SHARED } from "@/shared/constants";
 
 export const sharedMixin = {
-    // data: () => ({
-    //     SHARED
-    // }),
     computed: {
         ...mapGetters({
             getLanguageCode: SHARED.getLanguageCode,

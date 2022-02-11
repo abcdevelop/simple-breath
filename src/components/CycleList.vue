@@ -110,9 +110,7 @@ export default {
       // window.console.log("dragging: " + this.dragging);
       // window.console.log("onEnd.initialIndex", this.initialIndex);
       // window.console.log("onEnd.finalIndex", this.finalIndex);
-      // console.log('breath',this.breath)
       const cycle = this.breath.cycles[this.initialIndex];
-      // console.log('cycle',cycle)
       this.moveCycle({ cycle, from: this.initialIndex, to: this.finalIndex });
     },
   },

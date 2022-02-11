@@ -95,6 +95,7 @@ var isObjEmpty = function (obj) {
     return Object.keys(obj).length === 0 && obj.constructor === Object;
 }
 
+// Problem with window.navigator in this file
 // var isIphone = function () { return window.navigator.platform.toLowerCase().indexOf("iphone") > -1; }
 // var isIpadPro = function () { return window.navigator.platform.toLowerCase().indexOf("macintel") > -1; }
 // var isMacBookPro = function () { return window.navigator.platform.toLowerCase().indexOf("macintel") > -1; }

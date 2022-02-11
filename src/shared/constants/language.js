@@ -251,7 +251,7 @@ export const NAMES = {
         },
         subject: {
             en: `With "Simple Breath", increase your breathing capacity.
-            Easily manage the timings of cycles for your breathings.
+            Easily manage the timings of cycles for your breathing.
             Good practice !!!`,
             fr: `Avec "Respire Simple", augmente ta capacité respiratoire.
             Règle facilement les temps de cycles pour tes respirations.

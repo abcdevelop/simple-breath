@@ -517,29 +517,8 @@ export default {
     //   state.breaths.splice(index, 1);
     //   state.breaths.splice(index + 1, 0, breath);
     // },
-    // moveFromToBreath(state, { from, to }) {
-    //   console.log('moveFromToBreath', to)
-    //   const breath = state.breaths[from];
-    //   state.breaths.splice(from, 1);
-    //   // state.breaths.splice(to-1, 0, breath);
-    //   state.breaths.splice(from, 0, breath);
-    // },
-    moveFromToBreathCycle(state, { from, to, breath }) {
-      // console.log('moveFromToBreathCycle', from, to, breath)
-      if (!cycle.breathKey) {
-        console.log('Cycle without breathKey')
-        return
-      }
-      const breathIndex = state.breaths.findIndex(b => b.key === breath.key)
-      const cycle = state.breaths[breathIndex].cycles[from];
-      state.breaths[breathIndex].cycles.splice(from, 1);
-      state.breaths[breathIndex].cycles.splice(to, 0, cycle);
-    },
     moveBreath(state, { breath, from, to }) {
       // console.log('moveBreath', breath, from, to)
-      // const index = state.breaths.findIndex(b => b.key == breath.key)
-      // state.breaths.splice(index, 1);
-      // state.breaths.splice(index, 0, breath);
       state.breaths.splice(from, 1);
       state.breaths.splice(to, 0, breath);
     },
@@ -562,7 +541,6 @@ export default {
       }
       const breathIndex = state.breaths.findIndex(b => b.key == cycle.breathKey)
       const cycleIndex = state.breaths[breathIndex].cycles.findIndex(c => c.key == cycle.key)
-      // state.breaths[breathIndex].cycles[cycleIndex] = Object.assign({}, cycle)
       Object.assign(state.breaths[breathIndex].cycles[cycleIndex], cycle)
     },
 
@@ -746,9 +724,7 @@ export default {
     },
     getBreaths: state => state.breaths.map(breath => breath),
     getCycles: (state, getters) => breath => {
-      // console.log('getCycles.breath', breath)
       const breathIndex = getters.getBreathIndex(breath)
-      // console.log('breathIndex', breathIndex)
       return state.breaths[breathIndex].cycles.map(cycle => cycle)
     },
     getBreathByKey: state => key => state.breaths.find(breath => breath.key == key),

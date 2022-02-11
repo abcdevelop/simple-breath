@@ -64,7 +64,6 @@ export default {
   }),
   computed: {
     items() {
-      // return this.breath.cycles.map((cycle) => cycle);
       return this.getBreaths;
     },
   },

@@ -26,6 +26,7 @@ export default {
       });
     },
     setStatusText({ commit }, { statusText }) {
+      // console.log('setStatusText.statusText',statusText)
       commit(SHARED.setStatusText, { statusText })
       setTimeout(() => {
         return commit(SHARED.setStatusText, { statusText: null })
