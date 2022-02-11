@@ -109,10 +109,6 @@ node_modules
 /dist
 
 
-/doc
-/apk
-
-
 
 # local env files
 .env.local
