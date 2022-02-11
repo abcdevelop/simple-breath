@@ -9,7 +9,7 @@ services:
       dockerfile: Dockerfile
       target: 'production-stage'
     ports:
-      - '801O:80'
+      - '807O:80'
     volumes:
       - '/app/node_modules'
       - '.:/app'

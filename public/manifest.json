@@ -96,7 +96,7 @@
     ],
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#78909C",
+    "background_color": "#000000",
     "scope": "/",
     "description": "Breathe with simple settings",
     "dir": "ltr",
