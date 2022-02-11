@@ -216,9 +216,9 @@ export default {
         deferredPrompt.userChoice.then(choiceResult => {
           console.log('onAddShortcut',choiceResult.outcome);
           if (choiceResult.outcome === "dismissed") {
-            console.log("Installation du racourcis écran annulé");//TODO
+            console.log("Installation du racourcis écran annulé");//TODO:traduction
           } else {
-            console.log("Installation du racourcis écran effectué");//TODO
+            console.log("Installation du racourcis écran effectué");//TODO:traduction
           }
         });
         deferredPrompt = null;
@@ -227,7 +227,7 @@ export default {
     onShareWhatsapp() {
       //TODO: getTraduction
       const whatsappLink =
-        "https://wa.me/?text=https%3A%2F%2Fsimple-breath.web.app%20Une%20APP%20pour%20respirer%20%21";
+        "https://wa.me/?text=https%3A%2F%2Fsimple-breath-app.web.app%20Une%20APP%20pour%20respirer%20%21";
       window.open(whatsappLink);
     },
   },

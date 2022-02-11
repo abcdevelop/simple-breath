@@ -4,7 +4,7 @@ import TOOLS from "@/shared/tools";
 
 const defaultBreath = {
     key: null,
-    name: "New breath",//TODO
+    name: "New breath",//TODO:traduction
     cycles: [],
 }
 

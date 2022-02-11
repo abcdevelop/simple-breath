@@ -7,9 +7,7 @@ SimpleBreath
 // remplir AboutPage
 // defaultBreath [5,0,5,0]
 
-affiche le dernier écran utilisé
 activer les partages email, whatsapp
-
 utiliser la dialog Confirm
 traductions
 TODOS

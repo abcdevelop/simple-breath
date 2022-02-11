@@ -8,7 +8,7 @@
         <v-btn x-large class="mx-5" color="info" @click="playButton">
           <v-icon>mdi-play</v-icon>
         </v-btn>
-        <v-btn x-large color="info" @click="pauseButton">
+        <v-btn x-large color="info" @click="pauseButton"> 
           <v-icon>mdi-pause</v-icon>
         </v-btn>
       </v-btn-toggle>
