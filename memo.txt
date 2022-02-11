@@ -62,10 +62,18 @@ npm install --save @/vuedraggable
 
 
 
+PWA TO APK
+> npm install -g @bubblewrap/cli 
+> bubblewrap init --manifest nnhttps://simple-breath-app.web.app/manifest.json
+
+> bubblewrap build
+
+npm update -g @bubblewrap/cli
 
 
-
-
+bubblewrap merge
+bubblewrap update
+bubblewrap build
 
 
 

@@ -1,7 +1,7 @@
 {
     "name": "Simple Breath",
     "short_name": "SimpleBreath",
-    "theme_color": "#fafafa",
+    "theme_color": "#1E88E5",
     "icons": [
         {
             "src": "./img/icons/android-chrome-144x144.png",
@@ -96,7 +96,7 @@
     ],
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#fafafa",
+    "background_color": "#78909C",
     "scope": "/",
     "description": "Breathe with simple settings",
     "dir": "ltr",
