@@ -59,8 +59,43 @@ https://sortablejs.github.io/Vue.Draggable/#/simple
 npm install --save @/vuedraggable
 
 
+----------------------
+PWA TO APK
+----------------------
+npm install @capacitor/core @capacitor/cli
+npx cap init
+
+in capacitor.config.json
+if not change webDir:"www" to webDir:"dist"
+
+npm run build
+
+npm install @capacitor/android
+npx cap add android
 
 
+// Android Studio
+npx cap open android
+
+go to android studio 
+Build/Build Bundle(s) / APK(s)
+
+
+
+---------------
+NPM FIX
+---------------
+npm install npm@latest -g
+npx remove-node-modules
+npm install
+npm audit -- production
+npm audit
+npm audit fix
+npm audit fix --force -- production
+
+----------
+TRYs
+----------
 
 PWA TO APK
 > npm install -g @bubblewrap/cli 

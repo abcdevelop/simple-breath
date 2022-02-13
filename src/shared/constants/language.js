@@ -70,6 +70,7 @@ export const NAMES = {
             fr: 'Respire Simple',
         },
     },
+
     BreathListView: {
     },
     BreathList: {
@@ -82,6 +83,25 @@ export const NAMES = {
             fr: 'Nouvelle respirations',
         },
     },
+    DialogBreath: {
+        title: {
+            en: 'Breath',
+            fr: 'Respiration',
+        },
+        breathName: {
+            en: 'Breath name',
+            fr: 'Nom de la respiration',
+        },
+        newBreath: {
+            en: 'New breath',
+            fr: 'Nouvelle respiration',
+        },
+        editBreath: {
+            en: 'Edit breath',
+            fr: 'Modifier',
+        },
+    },
+
     BreathDonutView: {
     },
     BreathDonut: {
@@ -112,6 +132,7 @@ export const NAMES = {
             fr: 'En boucle au dernier cycle',
         }
     },
+
     CycleListView: {
     },
     CycleList: {
@@ -160,30 +181,7 @@ export const NAMES = {
             fr: 'Vide',
         },
     },
-    DialogBreathView: {
-        // title: {
-        //     en: 'Breath',
-        //     fr: 'Respiration',
-        // },
-    },
-    DialogBreath: {
-        title: {
-            en: 'Breath',
-            fr: 'Respiration',
-        },
-        breathName: {
-            en: 'Breath name',
-            fr: 'Nom de la respiration',
-        },
-        newBreath: {
-            en: 'New breath',
-            fr: 'Nouvelle respiration',
-        },
-        editBreath: {
-            en: 'Edit breath',
-            fr: 'Modifier',
-        },
-    },
+    
     AppDrawer: {
         language: {
             en: 'Language',

@@ -5,21 +5,21 @@
         <v-icon
           large
           class="mr-3 mb-1"
-          :color="enabled ? 'error' : 'default'"
+          :color="dragEnabled ? 'error' : 'default'"
           @click="enabledDrag"
-          >{{ enabled ? "mdi-pan-vertical" : "mdi-arrow-vertical-lock" }}
+          >{{ dragEnabled ? "mdi-pan-vertical" : "mdi-arrow-vertical-lock" }}
         </v-icon>
         <v-toolbar-title class="text-left font-weight-medium text-h6 white--text">
           {{ getTraduction(NAMES.BreathList.listOfBreaths) }}
         </v-toolbar-title>
         <v-spacer></v-spacer>
-        <DialogBreath v-show="!enabled" :breath="defaultBreath" />
+        <DialogBreath v-show="!dragEnabled" :breath="defaultBreath" />
       </v-toolbar>
 
       <v-list-item-group>
         <draggable
           :list="items"
-          :disabled="!enabled"
+          :disabled="!dragEnabled"
           class="list-group"
           ghost-class="ghost"
           :move="checkMove"
@@ -30,7 +30,7 @@
             <v-list-item-content v-text="item.name" @click="onItemClick(item)">
             </v-list-item-content>
             <v-list-item-icon>
-              <DialogBreath v-if="!enabled" @click="editItem(item)" :breath="item" />
+              <DialogBreath v-if="!dragEnabled" @click="editItem(item)" :breath="item" />
             </v-list-item-icon>
           </v-list-item>
         </draggable>
@@ -40,7 +40,9 @@
 </template>
 
 <script>
-import { sharedMixin, breathingMixin, routesMixin } from "@/mixins";
+import { mapGetters, mapActions } from "vuex";
+import { BREATHING } from "@/shared/constants";
+import { sharedMixin, routesMixin } from "@/mixins";
 import DialogBreath from "@/components/DialogBreath";
 import { Breath } from "@/shared/entities";
 import { NAMES } from "@/shared/constants";
@@ -48,7 +50,7 @@ import draggable from "vuedraggable";
 
 export default {
   name: "BreathList",
-  mixins: [sharedMixin, breathingMixin, routesMixin],
+  mixins: [sharedMixin, routesMixin],
   components: {
     DialogBreath,
     draggable,
@@ -56,20 +58,27 @@ export default {
   data: () => ({
     NAMES,
     defaultBreath: new Breath({}),
-    //drag
-    enabled: false,
     dragging: false,
+    dragEnabled: false,
     initialIndex: 0,
     finalIndex: 0,
   }),
   computed: {
+    ...mapGetters({
+      getBreathByIndex: BREATHING.getBreathByIndex,
+    }),
     items() {
       return this.getBreaths;
     },
   },
   methods: {
+    ...mapActions({
+      moveBreath: BREATHING.moveBreath,
+      setCurrentBreath: BREATHING.setCurrentBreath,
+      setCurrentPeriods: BREATHING.setCurrentPeriods,
+    }),    
     enabledDrag() {
-      this.enabled = !this.enabled;
+      this.dragEnabled = !this.dragEnabled;
     },
     onStart: function () {
       this.dragging = true;
@@ -91,7 +100,7 @@ export default {
       this.moveBreath({ breath, from: this.initialIndex, to: this.finalIndex });
     },
     onItemClick(breath) {
-      if (this.enabled) return;
+      if (this.dragEnabled) return;
       // console.log("onItemClick.breath", breath);
       this.setCurrentBreath({ breath });
       const periods =

@@ -1,6 +1,6 @@
 {
   "name": "simple-breath",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -8,6 +8,9 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@capacitor/android": "^3.4.1",
+    "@capacitor/cli": "^3.4.1",
+    "@capacitor/core": "^3.4.1",
     "@mdi/font": "^6.5.95",
     "apexcharts": "^3.32.1",
     "core-js": "^3.6.5",

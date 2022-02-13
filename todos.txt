@@ -11,3 +11,6 @@ activer les partages email, whatsapp
 utiliser la dialog Confirm
 traductions
 TODOS
+npm audit fix
+
+supprimer DialogCycleCiew et DialogBreathView

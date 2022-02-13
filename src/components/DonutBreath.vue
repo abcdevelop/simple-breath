@@ -3,13 +3,13 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+import { BREATHING } from "@/shared/constants";
 import { eventBus } from "@/main";
-import { breathingMixin } from "@/mixins";
 import { EVENTS, INHALE, FULL, EXHALE, EMPTY, COLORS } from "@/shared/constants";
 
 export default {
   name: "DonutBreath",
-  mixins: [breathingMixin],
   data() {
     return {
       series: [0, 100],
@@ -54,16 +54,19 @@ export default {
     };
   },
   created() {
-    // console.log('created.breath',this.breath)
     this.options.title.text = this.getCurrentBreath.name;
     eventBus.$on(EVENTS.periodsChanged, () => {
       this.diplay();
     });
   },
   mounted() {
-    // console.log('mounted.breath',this.breath)
-    // console.log('mounted.getCurrentPeriods',this.getCurrentPeriods)
     this.diplay();
+  },
+    computed: {
+    ...mapGetters({
+      getCurrentBreath: BREATHING.getCurrentBreath,
+      getCurrentPeriods: BREATHING.getCurrentPeriods,
+    }),
   },
   methods: {
     diplay() {

@@ -71,13 +71,15 @@
 </template>
 
 <script>
-import { sharedMixin, breathingMixin } from "@/mixins";
+import { mapActions } from "vuex";
+import { BREATHING } from "@/shared/constants";
+import { sharedMixin } from "@/mixins";
 import { NAMES, MESSAGES, RULES } from "@/shared/constants";
 import { Breath } from "@/shared/entities";
 
 export default {
   name: "DialogBreath",
-  mixins: [sharedMixin, breathingMixin],
+  mixins: [sharedMixin],
 
   props: {
     breath: {
@@ -121,6 +123,12 @@ export default {
     },
   },
   methods: {
+    ...mapActions({
+      addBreath: BREATHING.addBreath,
+      setBreath: BREATHING.setBreath,
+      deleteBreath: BREATHING.deleteBreath,
+      duplicateBreath: BREATHING.duplicateBreath,
+    }),
     deleteItem() {
       this.dialogConfirm = true;
     },

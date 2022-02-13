@@ -105,13 +105,15 @@
 </template>
 
 <script>
-import { sharedMixin, breathingMixin } from "@/mixins";
+import { mapGetters, mapActions } from "vuex";
+import { BREATHING } from "@/shared/constants";
+import { sharedMixin } from "@/mixins";
 import { NAMES, MESSAGES, RULES } from "@/shared/constants";
 import { Breath, Cycle } from "@/shared/entities";
 
 export default {
   name: "DialogCycle",
-  mixins: [sharedMixin, breathingMixin],
+  mixins: [sharedMixin],
 
   props: {
     cycle: {
@@ -139,6 +141,9 @@ export default {
     this.editedCycle = Object.assign({}, this.cycle);
   },
   computed: {
+    ...mapGetters({
+      getCurrentBreath: BREATHING.getCurrentBreath,
+    }),
     formTitle() {
       return this.editMode
         ? this.getTraduction(NAMES.DialogCycle.newCycle)
@@ -157,6 +162,12 @@ export default {
     },
   },
   methods: {
+    ...mapActions({
+      addCycle: BREATHING.addCycle,
+      setCycle: BREATHING.setCycle,
+      deleteCycle: BREATHING.deleteCycle,
+      duplicateCycle: BREATHING.duplicateCycle,
+    }),
     deleteItem() {
       this.dialogConfirm = true;
     },

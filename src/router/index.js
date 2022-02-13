@@ -5,8 +5,6 @@ import Home from '@/views/Home.vue'
 import BreathListView from '@/views/BreathListView.vue'
 import BreathDonutView from '@/views/BreathDonutView.vue'
 import CycleListView from '@/views/CycleListView.vue'
-import DialogBreathView from '@/views/DialogBreathView.vue'
-import DialogCycleView from '@/views/DialogCycleView.vue'
 
 Vue.use(VueRouter)
 
@@ -30,16 +28,6 @@ const routes = [
     path: '/CycleListView',
     name: ROUTES.CycleListView,
     component: CycleListView
-  },
-  {
-    path: '/DialogBreathView',
-    name: ROUTES.DialogBreathView,
-    component: DialogBreathView
-  },
-  {
-    path: '/DialogCycleView',
-    name: ROUTES.DialogCycleView,
-    component: DialogCycleView
   },
   {
     path: '/About',

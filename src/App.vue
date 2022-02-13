@@ -3,7 +3,9 @@
     <AppDrawer></AppDrawer>
     <v-app-bar v-if="$route.name !== 'Home'" app color="primary" dark>
       <!-- ICONS -->
-      <v-app-bar-nav-icon v-show="($route.name === ROUTES.BreathListView) || ($route.name === ROUTES.About)" @click="goHome"
+      <v-app-bar-nav-icon
+        v-show="$route.name === ROUTES.BreathListView || $route.name === ROUTES.About"
+        @click="goHome"
         ><img :src="logo" alt="logo" />
       </v-app-bar-nav-icon>
 
@@ -29,13 +31,14 @@
       <!-- ICONS -->
       <v-app-bar-nav-icon
         v-show="$route.name === ROUTES.BreathDonutView"
-        @click="goDialogCycleView"
+        @click="goCycleListView"
         class="mr-1"
         ><v-icon>mdi-solar-panel-large</v-icon>
       </v-app-bar-nav-icon>
 
       <v-app-bar-nav-icon
         v-show="$route.name === ROUTES.CycleListView"
+        :disabled="getCurrentBreath && getCurrentBreath.cycles && getCurrentBreath.cycles.length===0"
         @click="goBreathDonutView"
         class="mr-3"
         large
@@ -65,36 +68,34 @@
         <router-view />
       </v-layout>
     </v-main>
-
-    <!-- <v-footer v-show="$route.name === ROUTES.Home" app>
-      <span>{{ getTraduction(NAMES.About.developer) }}</span>
-      <v-spacer></v-spacer>
-      <span>version {{ version }}</span>
-    </v-footer> -->
   </v-app>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+import { BREATHING } from "@/shared/constants";
 import { eventBus } from "@/main";
-import { sharedMixin, breathingMixin, routesMixin } from "@/mixins";
+import { sharedMixin, routesMixin } from "@/mixins";
 import { NAMES, EVENTS } from "@/shared/constants";
 import AppDrawer from "@/components/AppDrawer";
 
-const { version } = require("@/../package.json");
-
 export default {
   name: "App",
-  mixins: [sharedMixin, breathingMixin, routesMixin],
+  mixins: [sharedMixin, routesMixin],
 
   components: {
     AppDrawer,
   },
   data: () => ({
     NAMES,
-    version,
     logo: require("@/assets/logo.png"),
     backgroundImage: require("@/assets/simple-breath.jpg"),
   }),
+    computed: {
+    ...mapGetters({
+      getCurrentBreath: BREATHING.getCurrentBreath,
+    }),
+  },
   methods: {
     onDrawerSelected() {
       eventBus.$emit(EVENTS.openAppDrawer);

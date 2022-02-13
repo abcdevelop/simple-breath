@@ -23,10 +23,6 @@ export const routesMixin = {
       if (this.$route.name === ROUTES.BreathListView) return
       this.$router.push({ name: ROUTES.BreathListView });
     },
-    goDialogBreathView() {
-      if (this.$route.name === ROUTES.DialogBreathView) return
-      this.$router.push({ name: ROUTES.DialogBreathView });
-    },
 
     goBreathDonutView() {
       if (this.$route.name === ROUTES.BreathDonutView) return
@@ -34,21 +30,13 @@ export const routesMixin = {
         this.$router.push({ name: ROUTES.BreathDonutView });
       } else {
         if (this.$route.name === ROUTES.CycleListView) return
-        this.goDialogCycleView()
+        this.goCycleListView()
       }
     },
     
     goCycleListView() {
       if (this.$route.name === ROUTES.CycleListView) return
       this.$router.push({ name: ROUTES.CycleListView });
-    },
-    goDialogCycleView() {
-      if (this.$route.name === ROUTES.CycleListView) return
-      if (this.getCurrentBreath.key) {
-        this.$router.push({ name: ROUTES.CycleListView });
-      } else {
-        this.goDialogBreathView()
-      }
     },
   }
 };

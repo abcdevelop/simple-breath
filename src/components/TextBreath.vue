@@ -17,13 +17,15 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+import { BREATHING } from "@/shared/constants";
 import { eventBus } from "@/main";
-import { sharedMixin, breathingMixin } from "@/mixins";
+import { sharedMixin } from "@/mixins";
 import { EVENTS, NAMES, INHALE } from "@/shared/constants";
 
 export default {
   name: "TextBreath",
-  mixins: [sharedMixin, breathingMixin],
+  mixins: [sharedMixin],
   data() {
     return {
       NAMES,
@@ -61,6 +63,11 @@ export default {
     });
   },
   computed: {
+    ...mapGetters({
+      getCurrentPeriods: BREATHING.getCurrentPeriods,
+      getCurrentCycleIndex: BREATHING.getCurrentCycleIndex,
+      getCurrentPeriodIndex: BREATHING.getCurrentPeriodIndex,
+    }),
     cycleCounter() {
       // return Number.parseFloat(
       //   this.periods[this.periodIndex].max - this.periods[this.periodIndex].value

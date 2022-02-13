@@ -4,15 +4,15 @@
       <v-icon
         large
         class="mr-3 mb-1"
-        :color="enabled ? 'error' : 'default'"
+        :color="dragEnabled ? 'error' : 'default'"
         @click="enabledDrag"
-        >{{ enabled ? "mdi-pan-vertical" : "mdi-arrow-vertical-lock" }}
+        >{{ dragEnabled ? "mdi-pan-vertical" : "mdi-arrow-vertical-lock" }}
       </v-icon>
       <v-toolbar-title class="text-left font-weight-medium text-h6 white--text">
         {{ breath.name }}
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <DialogCycle v-show="!enabled" :cycle="defaultCycle" />
+      <DialogCycle v-show="!dragEnabled" :cycle="defaultCycle" />
     </v-toolbar>
 
     <v-list-item class="justify-space-between font-weight-bold text-subtitle-1">
@@ -30,7 +30,7 @@
     <v-list-item-group>
       <draggable
         :list="items"
-        :disabled="!enabled"
+        :disabled="!dragEnabled"
         class="list-group"
         ghost-class="ghost"
         :move="checkMove"
@@ -43,7 +43,7 @@
           <v-list-item-content v-text="item.exhale"> </v-list-item-content>
           <v-list-item-content v-text="item.empty"> </v-list-item-content>
           <v-list-item-icon>
-            <DialogCycle v-if="!enabled" :cycle="item" />
+            <DialogCycle v-if="!dragEnabled" :cycle="item" />
           </v-list-item-icon>
         </v-list-item>
       </draggable>
@@ -52,7 +52,9 @@
 </template>
 
 <script>
-import { sharedMixin, breathingMixin, routesMixin } from "@/mixins";
+import { mapGetters, mapActions } from "vuex";
+import { BREATHING } from "@/shared/constants";
+import { sharedMixin, routesMixin } from "@/mixins";
 import { NAMES, MESSAGES, INHALE, FULL, EXHALE, EMPTY } from "@/shared/constants";
 import DialogCycle from "@/components/DialogCycle";
 import { Cycle } from "@/shared/entities";
@@ -60,7 +62,7 @@ import draggable from "vuedraggable";
 
 export default {
   name: "CycleList",
-  mixins: [sharedMixin, breathingMixin, routesMixin],
+  mixins: [sharedMixin, routesMixin],
   components: {
     DialogCycle,
     draggable,
@@ -78,21 +80,25 @@ export default {
     EXHALE,
     EMPTY,
     defaultCycle: new Cycle({}),
-    editedCycle: new Cycle({}),
-    //drag
-    enabled: false,
     dragging: false,
+    dragEnabled: false,
     initialIndex: 0,
     finalIndex: 0,
   }),
   computed: {
+    ...mapGetters({
+      getCycles: BREATHING.getCycles,
+    }),
     items() {
       return this.getCycles(this.breath);
     },
   },
   methods: {
+    ...mapActions({
+      moveCycle: BREATHING.moveCycle,
+    }),    
     enabledDrag() {
-      this.enabled = !this.enabled;
+      this.dragEnabled = !this.dragEnabled;
     },
     onStart: function () {
       this.dragging = true;

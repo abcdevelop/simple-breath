@@ -11,14 +11,19 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+import { BREATHING } from "@/shared/constants";
 import CycleList from "../components/CycleList";
-import { breathingMixin } from "@/mixins";
 
 export default {
   name: "CycleListView",
-  mixins: [breathingMixin],
   components: {
     CycleList,
+  },
+  computed: {
+    ...mapGetters({
+      getCurrentBreath: BREATHING.getCurrentBreath,
+    }),
   },
 };
 </script>
