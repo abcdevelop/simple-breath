@@ -1,10 +1,8 @@
 SimpleBreath
 
 // fonctionne en mode déconnecté
-// supprimer les console.log
 // multi langues
 // changer l'ordre des listes Breaths et Cycles (drag n drop)
-// remplir AboutPage
 // defaultBreath [5,0,5,0]
 
 activer les partages email, whatsapp
@@ -12,5 +10,3 @@ utiliser la dialog Confirm
 traductions
 TODOS
 npm audit fix
-
-supprimer DialogCycleCiew et DialogBreathView

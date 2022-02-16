@@ -78,12 +78,16 @@ npx cap add android
 // Android Studio
 npx cap open android
 
+
+C:\Program Files\Android\Android Studio\plugins\android\resources\images\asset_studio\ic_launcher_foreground.xml
+
+
+
 go to android studio 
 Build/Build Bundle(s) / APK(s)
 
 
 
-C:\Program Files\Android\Android Studio\plugins\android\resources\images\asset_studio\ic_launcher_foreground.xml
 
 ---------------
 NPM FIX
@@ -95,6 +99,31 @@ npm audit -- production
 npm audit
 npm audit fix
 npm audit fix --force -- production
+
+
+
+
+
+
+-----------
+// DOCKER
+-----------
+
+docker build -t abcdevelop/respire-simple:1.2.1 .
+docker images | grep abcdevelop
+docker run --name respire-simple_1.2.1 -d -p 8071:80 abcdevelop/respire-simple:1.2.1
+docker ps
+
+ou
+
+Modifier le numéro de version dans docker-compose puis :
+docker-compose build
+docker-compose up -d
+
+
+
+
+
 
 ----------
 TRYs
@@ -117,21 +146,4 @@ bubblewrap build
 
 https://github.com/eCollect/vue-swipe-actions
 npm install --save vue-swipe-actions
-
-
-
------------
-// DOCKER
------------
-
-docker build -t abcdevelop/respire-simple:1.2.1 .
-docker images | grep abcdevelop
-docker run --name respire-simple_1.2.1 -d -p 8071:80 abcdevelop/respire-simple:1.2.1
-docker ps
-
-ou
-
-Modifier le numéro de version dans docker-compose puis :
-docker-compose build
-docker-compose up -d
 
