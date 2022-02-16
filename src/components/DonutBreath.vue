@@ -10,8 +10,7 @@ import { EVENTS, INHALE, FULL, EXHALE, EMPTY, COLORS } from "@/shared/constants"
 
 export default {
   name: "DonutBreath",
-  data() {
-    return {
+data: () => ({
       series: [0, 100],
       options: {
         title: {
@@ -51,8 +50,7 @@ export default {
           },
         },
       },
-    };
-  },
+  }),
   created() {
     this.options.title.text = this.getCurrentBreath.name;
     eventBus.$on(EVENTS.periodsChanged, () => {

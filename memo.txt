@@ -13,8 +13,7 @@ cd simple-breath
 vue add vuetify
 
 https://github.com/apexcharts/vue-apexcharts
-npm install --save apexcharts
-npm install --save vue-apexcharts
+npm install --save apexcharts vue-apexcharts
 
 npm install --save @mdi/font
 
@@ -62,6 +61,8 @@ npm install --save @/vuedraggable
 ----------------------
 PWA TO APK
 ----------------------
+
+https://capacitorjs.com/solution/vue
 npm install @capacitor/core @capacitor/cli
 npx cap init
 
@@ -81,6 +82,8 @@ go to android studio
 Build/Build Bundle(s) / APK(s)
 
 
+
+C:\Program Files\Android\Android Studio\plugins\android\resources\images\asset_studio\ic_launcher_foreground.xml
 
 ---------------
 NPM FIX

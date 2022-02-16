@@ -26,31 +26,29 @@ import { EVENTS, NAMES, INHALE } from "@/shared/constants";
 export default {
   name: "TextBreath",
   mixins: [sharedMixin],
-  data() {
-    return {
-      NAMES,
-      cycleIndex: 0,
-      periodIndex: INHALE,
-      periods: [
-        {
-          value: 0,
-          max: 5,
-        },
-        {
-          value: 0,
-          max: 0,
-        },
-        {
-          value: 0,
-          max: 5,
-        },
-        {
-          value: 0,
-          max: 0,
-        },
-      ],
-    };
-  },
+  data: () => ({
+    NAMES,
+    cycleIndex: 0,
+    periodIndex: INHALE,
+    periods: [
+      {
+        value: 0,
+        max: 5,
+      },
+      {
+        value: 0,
+        max: 0,
+      },
+      {
+        value: 0,
+        max: 5,
+      },
+      {
+        value: 0,
+        max: 0,
+      },
+    ],
+  }),
   created() {
     eventBus.$on(EVENTS.periodsChanged, () => {
       this.periods = this.getCurrentPeriods;

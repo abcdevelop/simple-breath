@@ -161,8 +161,7 @@ export default {
   //   Confirm,
   //   Alert,
   // },
-  data() {
-    return {
+  data: () => ({
       LANGUAGES,
       NAMES,
       SHARED,
@@ -171,8 +170,7 @@ export default {
       deferredPrompt,
       dialog: false,
       logo: require("@/assets/logo.png"),
-    };
-  },
+  }),
   created() {
     eventBus.$on(EVENTS.openAppDrawer, () => {
       this.dialog = true;
