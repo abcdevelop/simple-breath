@@ -2,8 +2,8 @@
 version: '3.7'
 services:
   mes-courses:
-    image: abcdevelop/simple-breath:3
-    container_name: simple-breath_3
+    image: abcdevelop/simple-breath:1.0.2
+    container_name: simple-breath_1.0.2
     build:
       context: .
       dockerfile: Dockerfile

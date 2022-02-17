@@ -39,7 +39,8 @@
 import { sharedMixin, breathingMixin } from "@/mixins";
 import { Breath } from "@/shared/entities";
 import { NAMES, INHALE, FULL, EXHALE, EMPTY } from "@/shared/constants";
-const beepSound = require("@/assets/gong.wav");
+const beepSound = require("@/assets/gong1.wav");
+const stopSound = require("@/assets/gong1.wav");
 
 export default {
   name: "PlayBreath",
@@ -49,6 +50,7 @@ export default {
       NAMES,
       breath: new Breath({}),
       audio: new Audio(beepSound),
+      gong: new Audio(stopSound),
       breathButton: 0,
       cycleIndex: 0,
       periodIndex: INHALE,
@@ -164,7 +166,7 @@ export default {
           // end of last cycle
           if (!this.loopLastCycle) {
             if (this.beepPlay) {
-              this.audio.play();
+              this.gong.play();
             }
             return this.stopButton();
           }
