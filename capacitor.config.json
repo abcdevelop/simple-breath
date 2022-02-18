@@ -1,6 +1,0 @@
-{
-  "appId": "com.simple.breath.app",
-  "appName": "Simple Breath",
-  "webDir": "dist",
-  "bundledWebRuntime": false
-}
