@@ -38,7 +38,11 @@
 
       <v-app-bar-nav-icon
         v-show="$route.name === ROUTES.CycleListView"
-        :disabled="getCurrentBreath && getCurrentBreath.cycles && getCurrentBreath.cycles.length===0"
+        :disabled="
+          getCurrentBreath &&
+          getCurrentBreath.cycles &&
+          getCurrentBreath.cycles.length === 0
+        "
         @click="goBreathDonutView"
         class="mr-3"
         large
@@ -91,7 +95,7 @@ export default {
     logo: require("@/assets/logo.png"),
     backgroundImage: require("@/assets/simple-breath.jpg"),
   }),
-    computed: {
+  computed: {
     ...mapGetters({
       getCurrentBreath: BREATHING.getCurrentBreath,
     }),
