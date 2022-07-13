@@ -109,7 +109,7 @@
               this page.
             </p> <p>This policy is effective as of 2022-07-13</p> <p><strong>Contact Us</strong></p> <p>
               If you have any questions or suggestions about our
-              Privacy Policy, do not hesitate to contact us at abcdevelop@yahoo.fr.</p>
+              Privacy Policy, do not hesitate to contact us at abcdevelop@yahoo.com</p>
           </v-card-text>
         </v-card>
       </v-card>
