@@ -11,7 +11,6 @@ export default new Vuex.Store({
   plugins: [createPersistedState()],
   state: {},
   mutations: {},
-  actions: {
-  },
+  actions: {},
   modules
 })
